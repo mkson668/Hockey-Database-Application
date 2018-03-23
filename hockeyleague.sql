@@ -294,3 +294,48 @@ values ('24', '56', 'Mark Scheifele', '21',	'32',	'53',	'12', '62000', '2016-01-
 insert into Players
 values ('25', '48', 'Kyle Connor', '27',	'19',	'46',	'1', '53000', '2015-09-01',
 '2019-01-01', 'Jets', 'Winnipeg');
+
+insert into Coaches
+values ('Travis Green', '5', '10000', '2018-01-01', '2019-01-01', 'Canucks', 'Vancouver');
+
+insert into Coaches
+values ( 'Todd McLellan', '4', '10000', '2017-01-01', '2020-01-01', 'Oilers', 'Edmonton');
+
+insert into Coaches
+values ('Glen Gulutzan', '3', '10000', '2018-01-01', '2019-01-01', 'Flames', 'Calgary');
+
+insert into Coaches
+values ( 'Paul Maurice', '2', '20000', '2016-01-01', '2018-01-01', 'Jets', 'Winnipeg');
+
+insert into Coaches
+values ('Mike Babcock', '1', '30000', '2017-01-01', '2022-01-01', 'Maple Leafs', 'Toronto');
+
+insert into Managers
+values ('Jim Benning', '5', '10000', '2018-01-01', '2019-01-01', 'Canucks', 'Vancouver');
+
+insert into Managers
+values ('Peter Chiarelli', '4', '10000', '2017-01-01', '2020-01-01', 'Oilers', 'Edmonton');
+
+insert into Managers
+values ('Brad Treliving', '3', '10000', '2018-01-01', '2019-01-01', 'Flames', 'Calgary');
+
+insert into Managers
+values ('Kevin Cheveldayoff', '2', '20000', '2016-01-01', '2018-01-01', 'Jets', 'Winnipeg'):
+
+insert into Managers
+values ( 'Lou Lamoriello', '1', '30000',  '2017-01-01', '2022-01-01', 'Maple Leafs', 'Toronto');
+
+insert into HomeTeamAddresses
+values ( 'Canucks', '800 Griffiths Way, Vancouver, BC V6B 6G1');
+
+insert into HomeTeamAddresses
+values ('Oilers', '300 – 10214 104 Ave NW, Edmonton, AB T5J 0H6');
+
+insert into HomeTeamAddresses
+values ( 'Flames', '555 Saddledome Rise SE, Calgary, AB T2G2W1');
+
+insert into HomeTeamAddresses
+values ('Jets',  '345 Graham Avenue, Winnipeg, Manitoba R3C 5S6');
+
+insert into HomeTeamAddresses
+values ('Maple Leafs', '50 Carlton St, Toronto, ON M5B 1J2');
