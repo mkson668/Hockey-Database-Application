@@ -412,6 +412,8 @@ INSERT INTO Jerseys(serialNumber,price,playerNumber,jerseySize,teamName,city) VA
 INSERT INTO Jerseys(serialNumber,price,playerNumber,jerseySize,teamName,city) VALUES (9,20,56,'S','Maple Leafs','Toronto');
 INSERT INTO Jerseys(serialNumber,price,playerNumber,jerseySize,teamName,city) VALUES (10,20,60,'M','Maple Leafs','Toronto');
 
+DROP VIEW teamsAndVenuesPlayed;
+
 CREATE VIEW teamsAndVenuesPlayed(teamName,teamCity,venueAddress) AS
 	((SELECT homeTeam, homeCity, address
 	FROM Games g, GameLocations gl
