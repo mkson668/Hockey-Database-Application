@@ -78,51 +78,39 @@
  * Date: 2018-03-23
  * Time: 3:56 PM
  */
-$db_conn = OCILogon("ora_z0i0b", "a35396150", "dbhost.ugrad.cs.ubc.ca:1522/ug"); // establish connection
+$db_conn = OCILogon("ora_z0i0b", "a35396150", "dbhost.ugrad.cs.ubc.ca:1522/ug");
+if ($db_conn) {
+    echo 'it connected';
+    }else{
+    $err = OCIError();
+    echo 'does not connect';
+} // establish connection
 
-function executePlainSQL($cmdstr) { //takes a plain (no bound variables) SQL command and executes it
-    //echo "<br>running ".$cmdstr."<br>";
-    global $db_conn, $success;
-    $statement = OCIParse($db_conn, $cmdstr); //There is a set of comments at the end of the file that describe some of the OCI specific functions and how they work
 
-    if (!$statement) {
-        echo "<br>Cannot parse the following command: " . $cmdstr . "<br>";
-        $e = OCI_Error($db_conn); // For OCIParse errors pass the
-        // connection handle
-        echo htmlentities($e['message']); // test
-        $success = False;
-    }
-
-    $r = OCIExecute($statement, OCI_DEFAULT);
-    if (!$r) {
-        echo "<br>Cannot execute the following command: " . $cmdstr . "<br>";
-        $e = oci_error($statement); // For OCIExecute errors pass the statementhandle
-        echo htmlentities($e['message']);
-        $success = False;
-    } else {
-
-    }
-    return $statement;
-
-}
-
-$team = $_GET['teamSelected']; // get the team from drop table
-
-$query = 'select * from Players where team = ' . $team; // form query using drop table input
-
+//$team = $_GET['teamSelected']; // get the team from drop table
+$query = 'SELECT * FROM Players'; // form query using drop table input
 echo $query; // printf
 
-$stid = oci_parse($db_conn, $query);
-$r = oci_execute($stid);
+$stid = OCIParse($db_conn, $query);
+//oci_bind_by_name($stid, ':team', $team, -1);
 
-print '<table border = "1">';
-while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC)) {
-    print '<tr>';
-    foreach ($row as $item) {
-        print '<td>'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'</td>';
+if (!$stid) {
+    echo "<br>Cannot parse the following command: " . $query . "<br>";
+    $e = oci_error($db_conn);
+    echo htmlentities($e['message']);
+} else {
+    echo "<br>parsed following command: " . $query . "<br>";
+    echo $stid . "<br>";
+    $r = OCIExecute($stid);
+    print '<table border = "1">';
+    while ($row = oci_fetch_array($stid, OCI_RETURN_NULLS+OCI_ASSOC)) {
+        print '<tr>';
+        foreach ($row as $item) {
+            print '<td>'.($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp').'</td>';
+        }
+        print '</tr>';
     }
-    print '</tr>';
+    print '</table>';
 }
-print '</table>';
 
 ?>
