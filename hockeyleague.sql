@@ -339,3 +339,86 @@ values ('Jets',  '345 Graham Avenue, Winnipeg, Manitoba R3C 5S6');
 
 insert into HomeTeamAddresses
 values ('Maple Leafs', '50 Carlton St, Toronto, ON M5B 1J2');
+
+INSERT INTO Games(homeTeam,homeCity,homeScore,gameId,startTime,awayTeam,awayCity,awayScore) VALUES ('Canucks','Vancouver',3,1,to_date('2018-01-02 16:00:00', 'yyyy-mm-dd hh24-mi-ss'),'Oilers','Edmonton',2);
+INSERT INTO Games(homeTeam,homeCity,homeScore,gameId,startTime,awayTeam,awayCity,awayScore) VALUES ('Flames','Calgary',2,2,to_date('2018-02-02 16:00:00', 'yyyy-mm-dd hh24-mi-ss'),'Canucks','Vancouver',0);
+INSERT INTO Games(homeTeam,homeCity,homeScore,gameId,startTime,awayTeam,awayCity,awayScore) VALUES ('Jets','Winnipeg',4,3,to_date('2018-03-05 18:00:00', 'yyyy-mm-dd hh24-mi-ss'),'Canucks','Vancouver',2);
+INSERT INTO Games(homeTeam,homeCity,homeScore,gameId,startTime,awayTeam,awayCity,awayScore) VALUES ('Maple Leafs','Toronto',3,4,to_date('2018-02-05 18:00:00', 'yyyy-mm-dd hh24-mi-ss'),'Canucks','Vancouver',2);
+INSERT INTO Games(homeTeam,homeCity,homeScore,gameId,startTime,awayTeam,awayCity,awayScore) VALUES ('Oilers','Edmonton',1,5,to_date('2018-03-01 18:00:00', 'yyyy-mm-dd hh24-mi-ss'),'Flames','Calgary',3);
+INSERT INTO Games(homeTeam,homeCity,homeScore,gameId,startTime,awayTeam,awayCity,awayScore) VALUES ('Jets','Winnipeg',1,6,to_date('2018-03-07 18:00:00', 'yyyy-mm-dd hh24-mi-ss'),'Flames','Calgary',3);
+INSERT INTO Games(homeTeam,homeCity,homeScore,gameId,startTime,awayTeam,awayCity,awayScore) VALUES ('Maple Leafs','Toronto',1,7,to_date('2018-03-08 18:00:00', 'yyyy-mm-dd hh24-mi-ss'),'Flames','Calgary',3);
+INSERT INTO Games(homeTeam,homeCity,homeScore,gameId,startTime,awayTeam,awayCity,awayScore) VALUES ('Oilers','Edmonton',0,8,to_date('2018-01-16 16:00:00', 'yyyy-mm-dd hh24-mi-ss'),'Canucks','Vancouver',2);
+INSERT INTO Games(homeTeam,homeCity,homeScore,gameId,startTime,awayTeam,awayCity,awayScore) VALUES ('Canucks','Vancouver',3,9,to_date('2018-03-19 16:00:00', 'yyyy-mm-dd hh24-mi-ss'),'Jets','Winnipeg',2);
+
+INSERT INTO GameLocations(gameId,address) VALUES (1,'800 Griffiths Way, Vancouver, BC V6B 6G1');
+INSERT INTO GameLocations(gameId,address) VALUES (2,'555 Saddledome Rise SE, Calgary, AB T2G2W1');
+INSERT INTO GameLocations(gameId,address) VALUES (3,'345 Graham Avenue, Winnipeg, Manitoba R3C 5S6');
+INSERT INTO GameLocations(gameId,address) VALUES (4,'50 Carlton St, Toronto, ON M5B 1J2');
+INSERT INTO GameLocations(gameId,address) VALUES (5,'300 – 10214 104 Ave NW, Edmonton, AB T5J 0H6');
+INSERT INTO GameLocations(gameId,address) VALUES (6,'345 Graham Avenue, Winnipeg, Manitoba R3C 5S6');
+INSERT INTO GameLocations(gameId,address) VALUES (7,'50 Carlton St, Toronto, ON M5B 1J2');
+INSERT INTO GameLocations(gameId,address) VALUES (8,'300 – 10214 104 Ave NW, Edmonton, AB T5J 0H6');
+INSERT INTO GameLocations(gameId,address) VALUES (9,'800 Griffiths Way, Vancouver, BC V6B 6G1');
+
+INSERT INTO TicketPrices(address,seat,price) VALUES ('800 Griffiths Way, Vancouver, BC V6B 6G1',1,10);
+INSERT INTO TicketPrices(address,seat,price) VALUES ('555 Saddledome Rise SE, Calgary, AB T2G2W1',1,10);
+INSERT INTO TicketPrices(address,seat,price) VALUES ('345 Graham Avenue, Winnipeg, Manitoba R3C 5S6',1,10);
+INSERT INTO TicketPrices(address,seat,price) VALUES ('50 Carlton St, Toronto, ON M5B 1J2',1,10);
+INSERT INTO TicketPrices(address,seat,price) VALUES ('300 – 10214 104 Ave NW, Edmonton, AB T5J 0H6',1,10);
+INSERT INTO TicketPrices(address,seat,price) VALUES ('345 Graham Avenue, Winnipeg, Manitoba R3C 5S6',2,10);
+INSERT INTO TicketPrices(address,seat,price) VALUES ('50 Carlton St, Toronto, ON M5B 1J2',2,10);
+INSERT INTO TicketPrices(address,seat,price) VALUES ('300 – 10214 104 Ave NW, Edmonton, AB T5J 0H6',2,10);
+INSERT INTO TicketPrices(address,seat,price) VALUES ('800 Griffiths Way, Vancouver, BC V6B 6G1',2,10);
+INSERT INTO TicketPrices(address,seat,price) VALUES ('800 Griffiths Way, Vancouver, BC V6B 6G1',3,10);
+INSERT INTO TicketPrices(address,seat,price) VALUES ('800 Griffiths Way, Vancouver, BC V6B 6G1',4,10);
+INSERT INTO TicketPrices(address,seat,price) VALUES ('800 Griffiths Way, Vancouver, BC V6B 6G1',5,10);
+
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (1,1,1);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (1,2,2);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (2,1,1);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (2,2,2);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (3,1,1);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (3,2,2);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (4,1,1);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (4,2,2);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (5,1,1);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (5,2,2);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (6,1,1);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (6,2,2);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (7,1,1);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (7,2,2);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (8,1,1);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (8,2,2);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (9,1,1);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (9,2,2);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (9,3,3);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (9,4,4);
+INSERT INTO Tickets(gameId,seat,ticket) VALUES (9,5,5);
+
+INSERT INTO Hats(serialNumber,price,teamName,city) VALUES (1,15,'Canucks','Vancouver');
+INSERT INTO Hats(serialNumber,price,teamName,city) VALUES (2,15,'Flames','Calgary');
+INSERT INTO Hats(serialNumber,price,teamName,city) VALUES (3,15,'Oilers','Edmonton');
+INSERT INTO Hats(serialNumber,price,teamName,city) VALUES (4,15,'Jets','Winnipeg');
+INSERT INTO Hats(serialNumber,price,teamName,city) VALUES (5,15,'Maple Leafs','Toronto');
+
+INSERT INTO Jerseys(serialNumber,price,playerNumber,jerseySize,teamName,city) VALUES (1,20,23,'S','Canucks','Vancouver');
+INSERT INTO Jerseys(serialNumber,price,playerNumber,jerseySize,teamName,city) VALUES (2,20,19,'M','Canucks','Vancouver');
+INSERT INTO Jerseys(serialNumber,price,playerNumber,jerseySize,teamName,city) VALUES (3,20,47,'S','Flames','Calgary');
+INSERT INTO Jerseys(serialNumber,price,playerNumber,jerseySize,teamName,city) VALUES (4,20,5,'M','Flames','Calgary');
+INSERT INTO Jerseys(serialNumber,price,playerNumber,jerseySize,teamName,city) VALUES (5,20,75,'S','Oilers','Edmonton');
+INSERT INTO Jerseys(serialNumber,price,playerNumber,jerseySize,teamName,city) VALUES (6,20,99,'M','Oilers','Edmonton');
+INSERT INTO Jerseys(serialNumber,price,playerNumber,jerseySize,teamName,city) VALUES (7,20,55,'S','Jets','Winnipeg');
+INSERT INTO Jerseys(serialNumber,price,playerNumber,jerseySize,teamName,city) VALUES (8,20,88,'M','Jets','Winnipeg');
+INSERT INTO Jerseys(serialNumber,price,playerNumber,jerseySize,teamName,city) VALUES (9,20,56,'S','Maple Leafs','Toronto');
+INSERT INTO Jerseys(serialNumber,price,playerNumber,jerseySize,teamName,city) VALUES (10,20,60,'M','Maple Leafs','Toronto');
+
+DROP VIEW teamsAndVenuesPlayed;
+
+CREATE VIEW teamsAndVenuesPlayed(teamName,teamCity,venueAddress) AS
+	((SELECT homeTeam, homeCity, address
+	FROM Games g, GameLocations gl
+	where g.gameId = gl.gameId)
+	UNION
+	(SELECT awayTeam, awayCity, address
+	FROM Games g, GameLocations gl
+	where g.gameId = gl.gameId));
