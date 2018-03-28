@@ -5,36 +5,29 @@
         body {
             background: #a0f2e0;
         }
-
         .box {
             margin-top: 50px;
             margin-bottom: 50px;
         }
-
         .mainform .titles,
         .mainform {
             margin-bottom: 30px;
         }
-
         .mainform {
             font-weight: bolder;
         }
-
         .mainform .user-input-placeholders {
             position: relative;
             font-size: 16px;
             height: auto;
             padding: 10px;
         }
-
         .mainform input[type="username"] {
             margin-bottom: 10px;
         }
-
         .mainform input[type="password"] {
             margin-bottom: 20px;
         }
-
         .mainform {
             max-width: 400px;
             padding: 15px 35px 45px;
@@ -72,14 +65,14 @@
 </div>
 
 <div class="box">
-    <form class="mainform" action="hockeyleaguemain.php">
+    <form class="mainform" action="division.php">
         <h2 style="font-family: Calibri">Return all teams that have played at every venue</h2>
         <button type="submit">Submit</button>
     </form>
 </div>
 
 <div class="box">
-    <form class="mainform" action="hockeyleaguemain.php">
+    <form class="mainform" action="maxPlayerSalary.php">
         <h2 style="font-family: Calibri">Find player with highest salary</h2>
         <button type="submit">Search</button>
     </form>
@@ -110,15 +103,11 @@ if ($db_conn) {
     $err = OCIError();
     echo 'does not connect';
 } // establish connection
-
-
 $team = $_GET['teamSelected']; // get the team from drop table
 $query = 'SELECT * FROM Players' . $team; // form query using drop table input
 echo $query; // printf
-
 $stid = OCIParse($db_conn, $query);
 //oci_bind_by_name($stid, ':team', $team, -1);
-
 if (!$stid) {
     echo "<br>Cannot parse the following command: " . $query . "<br>";
     $e = oci_error($db_conn);
