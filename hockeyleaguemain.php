@@ -61,8 +61,8 @@
 </div>
 
 <div class="box">
-    <form class="mainform" action="hockeyleaguemain.php">
-        <h2 style="font-family: Calibri" class="titles">show coach of player</h2>
+    <form class="mainform" action="join.php" method="get">
+        <h2 style="font-family: Calibri" class="titles">show info of player</h2>
         <input type="text" class="user-input-placeholders" name="playerFirstName" placeholder="First Name">
         <br>
         <input type="text" class="user-input-placeholders" name="playerLastName" placeholder="Last Name">
