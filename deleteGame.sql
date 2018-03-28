@@ -1,0 +1,3 @@
+DELETE
+FROM Games
+WHERE gameId=9;
