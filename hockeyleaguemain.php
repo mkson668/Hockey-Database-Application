@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <style>
         body {
@@ -13,11 +12,11 @@
         }
 
         .mainform .titles,
-        .mainform .checkbox {
+        .mainform {
             margin-bottom: 30px;
         }
 
-        .mainform .checkbox {
+        .mainform {
             font-weight: bolder;
         }
 
@@ -48,7 +47,7 @@
 
 <body>
 <div class="box">
-    <form class="mainform" action="hockeyleaguemain.php">
+    <form class="mainform" action="selection.php" method="get">
         <h2 style="font-family: Calibri">filter players by team and display all player stats</h2>
         <select name="teamSelected">
             <option value="Oilers">Oilers</option>
@@ -56,6 +55,7 @@
             <option value="Flames">Flames</option>
             <option value="MapleLeafs">Maple Leafs</option>
             <option value="Jets">Jets</option>
+        </select> <br><br>
             <input type="submit">
     </form>
 </div>
@@ -64,12 +64,37 @@
     <form class="mainform" action="hockeyleaguemain.php">
         <h2 style="font-family: Calibri" class="titles">show coach of player</h2>
         <input type="text" class="user-input-placeholders" name="playerFirstName" placeholder="First Name">
+        <br>
         <input type="text" class="user-input-placeholders" name="playerLastName" placeholder="Last Name">
-        <button type="submit">submit</button>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div class="box">
+    <form class="mainform" action="hockeyleaguemain.php">
+        <h2 style="font-family: Calibri">Return all teams that have played at every venue</h2>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<div class="box">
+    <form class="mainform" action="hockeyleaguemain.php">
+        <h2 style="font-family: Calibri">Find player with highest salary</h2>
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<div class="box">
+    <form class="mainform" action="hockeyleaguemain.php">
+        <h2 style="font-family: Calibri">Calculate average number of goals per player</h2>
+        <button type="submit">Calculate</button>
     </form>
 </div>
 </body>
 </html>
+
+
 
 <?php
 /**
@@ -78,7 +103,7 @@
  * Date: 2018-03-23
  * Time: 3:56 PM
  */
-$db_conn = OCILogon("ora_z0i0b", "a35396150", "dbhost.ugrad.cs.ubc.ca:1522/ug");
+/*$db_conn = OCILogon("ora_z0i0b", "a35396150", "dbhost.ugrad.cs.ubc.ca:1522/ug");
 if ($db_conn) {
     echo 'it connected';
     }else{
@@ -87,8 +112,8 @@ if ($db_conn) {
 } // establish connection
 
 
-//$team = $_GET['teamSelected']; // get the team from drop table
-$query = 'SELECT * FROM Players'; // form query using drop table input
+$team = $_GET['teamSelected']; // get the team from drop table
+$query = 'SELECT * FROM Players' . $team; // form query using drop table input
 echo $query; // printf
 
 $stid = OCIParse($db_conn, $query);
@@ -111,6 +136,5 @@ if (!$stid) {
         print '</tr>';
     }
     print '</table>';
-}
-
+}*/
 ?>
