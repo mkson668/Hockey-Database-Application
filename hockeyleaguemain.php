@@ -65,6 +65,21 @@
 </div>
 
 <div class="box">
+    <form class="mainform" action="maxPlayerSalary.php">
+        <h2 style="font-family: Calibri">Find player with highest salary</h2>
+        <select name="teamSelected">
+            <option value="All Teams">All Teams</option>
+            <option value="Oilers">Oilers</option>
+            <option value="Canucks">Canucks</option>
+            <option value="Flames">Flames</option>
+            <option value="Maple Leafs">Maple Leafs</option>
+            <option value="Jets">Jets</option>
+        </select> <br><br>
+        <input type="submit">
+    </form>
+</div>
+
+<div class="box">
     <form class="mainform" action="division.php">
         <h2 style="font-family: Calibri">Return all teams that have played at every venue</h2>
         <button type="submit">Submit</button>
