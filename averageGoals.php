@@ -1,3 +1,4 @@
+
 <?php
 $db_conn = OCILogon("ora_p0x8", "a35103126", "dbhost.ugrad.cs.ubc.ca:1522/ug");
 if ($db_conn) {
@@ -6,14 +7,13 @@ if ($db_conn) {
     $err = OCIError();
     echo 'does not connect';
 } // establish connection
-echo "<h2>Player with highest salary</h2><br>";
+echo "<h2>Average goals of all players</h2><br>";
 
-$query = 'SELECT name, salary
-FROM Players 
-WHERE salary = (SELECT max(salary) from Players)';
+$query = 'SELECT avg(goals)
+FROM Players';
 
 $stid = OCIParse($db_conn, $query);
-	
+    
 if (!$stid) {
     echo "<br>Cannot parse the following command: " . $query . "<br>";
     $e = oci_error($db_conn);
@@ -22,7 +22,7 @@ if (!$stid) {
 #    echo "<br>parsed following command: " . $query . "<br>";
 #    echo $stid . "<br>";
     $r = OCIExecute($stid);
-	if (!$r) {
+    if (!$r) {
 echo oci_error($stid);
 }
     print '<table border = "1">';

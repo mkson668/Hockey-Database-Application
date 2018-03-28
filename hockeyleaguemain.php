@@ -94,7 +94,7 @@
 </div>
 
 <div class="box">
-    <form class="mainform" action="hockeyleaguemain.php">
+    <form class="mainform" action="averageGoals.php">
         <h2 style="font-family: Calibri">Calculate average number of goals per player</h2>
         <button type="submit">Calculate</button>
     </form>
