@@ -65,9 +65,9 @@
 </div>
 
 <div class="box">
-    <form class="mainform" action="maxPlayerSalary.php">
+    <form class="mainform" action="maxPlayerSalary.php" method="get">
         <h2 style="font-family: Calibri">Find player with highest salary</h2>
-        <select name="teamSelected">
+        <select name="teamSalarySelected">
             <option value="All Teams">All Teams</option>
             <option value="Oilers">Oilers</option>
             <option value="Canucks">Canucks</option>
