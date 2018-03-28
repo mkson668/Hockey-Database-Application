@@ -53,7 +53,7 @@
             <option value="Oilers">Oilers</option>
             <option value="Canucks">Canucks</option>
             <option value="Flames">Flames</option>
-            <option value="MapleLeafs">Maple Leafs</option>
+            <option value="Maple Leafs">Maple Leafs</option>
             <option value="Jets">Jets</option>
         </select> <br><br>
             <input type="submit">
