@@ -94,8 +94,16 @@
 </div>
 
 <div class="box">
-    <form class="mainform" action="averageGoals.php">
+    <form class="mainform" action="averageGoals.php" method="get">
         <h2 style="font-family: Calibri">Calculate average number of goals per player</h2>
+        <select name="teamGoalSelected">
+            <option value="All Teams">All Teams</option>
+            <option value="Oilers">Oilers</option>
+            <option value="Canucks">Canucks</option>
+            <option value="Flames">Flames</option>
+            <option value="Maple Leafs">Maple Leafs</option>
+            <option value="Jets">Jets</option>
+        </select> <br><br>
         <button type="submit">Calculate</button>
     </form>
 </div>

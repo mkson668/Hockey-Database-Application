@@ -65,7 +65,7 @@ if ($team == 'All Teams') {
     }
 } else {
 
-    $query = 'SELECT name, salary
+    $query = 'SELECT name, salary, teamName
 FROM Players 
 WHERE salary = (SELECT max(salary) from Players)';
 
