@@ -130,6 +130,18 @@
     </form>
 </div>
 
+
+<div class="box">
+    <form class="mainform" action="updateSalary.php" method="post">
+        <h2 style="font-family: Calibri" class="titles">Update a player's salary</h2>
+        <input type="text" class="user-input-placeholders" name="playerId" placeholder="Player ID">
+        <br>
+        <input type="text" class="user-input-placeholders" name="salary" placeholder="New salary">
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
 </body>
 </html>
 
