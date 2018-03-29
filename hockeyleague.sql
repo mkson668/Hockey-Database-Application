@@ -216,10 +216,6 @@ values ('5', '2', 'Dougie Hamilton', '15', '6', '3', '8', '45000', '2016-04-01',
 '2019-01-01', 'Flames', 'Calgary');
 
 insert into Players
-values ('6', '22', 'Henrik Sedin', '20', '5', '23', '0', '50000', '2017-01-01',
-'2019-01-01', 'Canucks', 'Vancouver');
-
-insert into Players
 values ('7', '34', 'Brock Boeser', '32', '5', '12', '17', '43000', '2016-01-01',
 '2019-01-01', 'Canucks', 'Vancouver');
 

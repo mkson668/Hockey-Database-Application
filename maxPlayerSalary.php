@@ -65,20 +65,8 @@ if ($team == 'All Teams') {
     }
 } else {
 
-    $query = 'SELECT name, salary, teamName
-FROM Players 
-WHERE salary = (SELECT max(salary) from Players)';
-
-    $stid = OCIParse($db_conn, $query);
-
-    if (!$stid) {
-        echo "<br>Cannot parse the following command: " . $query . "<br>";
-        $e = oci_error($db_conn);
-        echo htmlentities($e['message']);
-    } else {
-
         $team = $_GET['teamSalarySelected'];
-        $query = 'SELECT name, salary, teamName FROM Players WHERE salary = (SELECT max(salary) from Players WHERE teamName = :team)';
+        $query = 'SELECT name, salary, teamName FROM Players WHERE salary = (SELECT max(salary) from Players WHERE teamName = :team) AND teamName = :team';
         $stid = OCIParse($db_conn, $query);
         OCIBindByName($stid, ':team', $team);
 
@@ -128,6 +116,5 @@ WHERE salary = (SELECT max(salary) from Players)';
             }
             print '</table>';
         }
-    }
 }
 
