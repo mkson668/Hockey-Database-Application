@@ -8,13 +8,13 @@ if ($db_conn) {
 } // establish connection
 echo "<h2>Player with highest salary</h2><br>";
 
-<<<<<<< HEAD
+
 $team = $_GET['teamSalarySelected'];
+
 if ($team == 'All Teams') {
     $query = 'SELECT name, salary, teamName 
     FROM Players 
     WHERE salary = (SELECT max(salary) from Players)';
-
     $stid = OCIParse($db_conn, $query);
 
     if (!$stid) {
@@ -63,69 +63,71 @@ if ($team == 'All Teams') {
         }
         print '</table>';
     }
-=======
-$query = 'SELECT name, salary
+} else {
+
+    $query = 'SELECT name, salary
 FROM Players 
 WHERE salary = (SELECT max(salary) from Players)';
 
-$stid = OCIParse($db_conn, $query);
-	
-if (!$stid) {
-    echo "<br>Cannot parse the following command: " . $query . "<br>";
-    $e = oci_error($db_conn);
-    echo htmlentities($e['message']);
->>>>>>> 828b0da11855d8c2c9026a4d0f6e1464706a7065
-} else {
-
-    $team = $_GET['teamSalarySelected'];
-    $query = 'SELECT name, salary, teamName FROM Players WHERE salary = (SELECT max(salary) from Players WHERE teamName = :team)';
     $stid = OCIParse($db_conn, $query);
-    OCIBindByName($stid, ':team', $team);
 
     if (!$stid) {
         echo "<br>Cannot parse the following command: " . $query . "<br>";
         $e = oci_error($db_conn);
         echo htmlentities($e['message']);
     } else {
+
+        $team = $_GET['teamSalarySelected'];
+        $query = 'SELECT name, salary, teamName FROM Players WHERE salary = (SELECT max(salary) from Players WHERE teamName = :team)';
+        $stid = OCIParse($db_conn, $query);
+        OCIBindByName($stid, ':team', $team);
+
+        if (!$stid) {
+            echo "<br>Cannot parse the following command: " . $query . "<br>";
+            $e = oci_error($db_conn);
+            echo htmlentities($e['message']);
+        } else {
 #    echo "<br>parsed following command: " . $query . "<br>";
 #    echo $stid . "<br>";
 
-        $r = OCIExecute($stid);
+            $r = OCIExecute($stid);
 
-        print '<table border = "1">';
-        while ($row = oci_fetch_array($stid, OCI_NUM + OCI_RETURN_NULLS)) {
-            print '<tr>';
-            foreach ($row as $item) {
-                print '<td>' . ($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp') . '</td>';
+            print '<table border = "1">';
+            while ($row = oci_fetch_array($stid, OCI_NUM + OCI_RETURN_NULLS)) {
+                print '<tr>';
+                foreach ($row as $item) {
+                    print '<td>' . ($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp') . '</td>';
+                }
+                print '</tr>';
             }
-            print '</tr>';
+            print '</table>';
         }
-        print '</table>';
-    }
 
-    $query = 'SELECT name, salary, teamName FROM Players WHERE teamName = :team';
-    $stid = OCIParse($db_conn, $query);
-    OCIBindByName($stid, ':team', $team);
+        $query = 'SELECT name, salary, teamName FROM Players WHERE teamName = :team';
+        $stid = OCIParse($db_conn, $query);
+        OCIBindByName($stid, ':team', $team);
 
-    if (!$stid) {
-        echo "<br>Cannot parse the following command: " . $query . "<br>";
-        $e = oci_error($db_conn);
-        echo htmlentities($e['message']);
-    } else {
+        if (!$stid) {
+            echo "<br>Cannot parse the following command: " . $query . "<br>";
+            $e = oci_error($db_conn);
+            echo htmlentities($e['message']);
+        } else {
 #    echo "<br>parsed following command: " . $query . "<br>";
 #    echo $stid . "<br>";
-        $r = OCIExecute($stid);
-        if (!$r) {
-            echo oci_error($stid);
-        }
-        print '<table border = "1">';
-        while ($row = oci_fetch_array($stid, OCI_NUM + OCI_RETURN_NULLS)) {
-            print '<tr>';
-            foreach ($row as $item) {
-                print '<td>' . ($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp') . '</td>';
+            $r = OCIExecute($stid);
+            if (!$r) {
+                echo oci_error($stid);
             }
-            print '</tr>';
+            print '<table border = "1">';
+            while ($row = oci_fetch_array($stid, OCI_NUM + OCI_RETURN_NULLS)) {
+                print '<tr>';
+                foreach ($row as $item) {
+                    print '<td>' . ($item !== null ? htmlentities($item, ENT_QUOTES) : '&nbsp') . '</td>';
+                }
+                print '</tr>';
+            }
+            print '</table>';
         }
-        print '</table>';
     }
 }
+
