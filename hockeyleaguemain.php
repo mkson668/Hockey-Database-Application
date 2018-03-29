@@ -102,6 +102,17 @@
 </div>
 
 <div class="box">
+    <form class="mainform" action="groupaggregatemin.php" method="get">
+        <h2 style="font-family: Calibri">Min team average salary</h2>
+        <button type="submit">Min</button>
+    </form>
+    <form class="mainform" action="groupaggregatemax.php" method="get">
+        <h2 style="font-family: Calibri">Max team average salary</h2>
+        <button type="submit">Max</button>
+    </form>
+</div>
+
+<div class="box">
     <form class="mainform" action="deleteGame.php" method="post"> 
         <h2 style="font-family: Calibri">Delete a game</h2> 
         <input type="text" class="user-input-placeholders" name="gameId" placeholder="Game ID">
@@ -109,7 +120,6 @@
         <button type="submit">Delete</button>
     </form>
 </div>
-
 
 <div class="box">
     <form class="mainform" action="viewTickets.php" method="get"> 
