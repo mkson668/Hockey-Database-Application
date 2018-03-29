@@ -48,7 +48,7 @@
 
 <div class="box">
     <h1 style="font-family: Calibri" class="titles" align="center">Hockey League Database System</h1>
-    <form class="mainform" action="mainpage.php">
+    <form class="mainform" action="hockeyleaguemain.php">
         <h2 style="font-family: Calibri" class="titles">Please enter credentials</h2>
         <input type="username" class="user-input-placeholders" name="username" placeholder="Player Username" required/>
         <input type="password" class="user-input-placeholders" name="password" placeholder="Password" required/><br>
