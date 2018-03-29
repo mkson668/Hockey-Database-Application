@@ -100,6 +100,26 @@
         <button type="submit">Calculate</button>
     </form>
 </div>
+
+<div class="box">
+    <form class="mainform" action="deleteGame.php" method="post"> 
+        <h2 style="font-family: Calibri">Delete a game</h2> 
+        <input type="text" class="user-input-placeholders" name="gameId" placeholder="Game ID">
+        <br><br>
+        <button type="submit">Delete</button>
+    </form>
+</div>
+
+
+<div class="box">
+    <form class="mainform" action="viewTickets.php" method="get"> 
+        <h2 style="font-family: Calibri">Find tickets for a Game</h2> 
+        <input type="text" class="user-input-placeholders" name="gameId" placeholder="Game ID">
+        <br><br>
+        <button type="submit">Find Tickets</button>
+    </form>
+</div>
+
 </body>
 </html>
 
