@@ -87,13 +87,6 @@
 </div>
 
 <div class="box">
-    <form class="mainform" action="maxPlayerSalary.php">
-        <h2 style="font-family: Calibri">Find player with highest salary</h2>
-        <button type="submit">Search</button>
-    </form>
-</div>
-
-<div class="box">
     <form class="mainform" action="averageGoals.php" method="get">
         <h2 style="font-family: Calibri">Calculate average number of goals per player</h2>
         <select name="teamGoalSelected">
