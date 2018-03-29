@@ -20,6 +20,7 @@ if (!$stid) {
 #    echo $stid . "<br>";
     $r = OCIExecute($stid);
     print '<table border = "1">';
+
     while ($row = oci_fetch_array($stid, OCI_NUM + OCI_RETURN_NULLS)) {
         print '<tr>';
         foreach ($row as $item) {

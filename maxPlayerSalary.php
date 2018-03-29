@@ -29,6 +29,15 @@ if ($team == 'All Teams') {
             echo oci_error($stid);
         }
         print '<table border = "1">';
+
+    $ncols = oci_num_fields($stid);
+    echo "<tr>";
+    for ($i = 1; $i <= $ncols; $i++) {
+       $columnName = oci_field_name($stid, $i);
+        echo "<td>$columnName</td>";
+    }
+    echo "</tr>";
+
         while ($row = oci_fetch_array($stid, OCI_NUM + OCI_RETURN_NULLS)) {
             print '<tr>';
             foreach ($row as $item) {
@@ -54,6 +63,15 @@ if ($team == 'All Teams') {
             echo oci_error($stid);
         }
         print '<table border = "1">';
+
+    $ncols = oci_num_fields($stid);
+    echo "<tr>";
+    for ($i = 1; $i <= $ncols; $i++) {
+       $columnName = oci_field_name($stid, $i);
+        echo "<td>$columnName</td>";
+    }
+    echo "</tr>";
+
         while ($row = oci_fetch_array($stid, OCI_NUM + OCI_RETURN_NULLS)) {
             print '<tr>';
             foreach ($row as $item) {
@@ -81,6 +99,15 @@ if ($team == 'All Teams') {
             $r = OCIExecute($stid);
 
             print '<table border = "1">';
+
+    $ncols = oci_num_fields($stid);
+    echo "<tr>";
+    for ($i = 1; $i <= $ncols; $i++) {
+       $columnName = oci_field_name($stid, $i);
+        echo "<td>$columnName</td>";
+    }
+    echo "</tr>";
+
             while ($row = oci_fetch_array($stid, OCI_NUM + OCI_RETURN_NULLS)) {
                 print '<tr>';
                 foreach ($row as $item) {
@@ -107,6 +134,15 @@ if ($team == 'All Teams') {
                 echo oci_error($stid);
             }
             print '<table border = "1">';
+
+    $ncols = oci_num_fields($stid);
+    echo "<tr>";
+    for ($i = 1; $i <= $ncols; $i++) {
+       $columnName = oci_field_name($stid, $i);
+        echo "<td>$columnName</td>";
+    }
+    echo "</tr>";
+
             while ($row = oci_fetch_array($stid, OCI_NUM + OCI_RETURN_NULLS)) {
                 print '<tr>';
                 foreach ($row as $item) {
