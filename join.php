@@ -15,8 +15,6 @@ $query = 'SELECT * FROM Players p, Coaches c WHERE p.name = :fullName AND p.team
 $stid = OCIParse($db_conn, $query);
 OCIBindByName($stid, ':fullName', $fullName);
 
-echo $query;
-
 if (!$stid) {
     echo "<br>Cannot parse the following command: " . $query . "<br>";
     $e = oci_error($db_conn);

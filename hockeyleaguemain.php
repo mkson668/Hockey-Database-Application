@@ -41,7 +41,7 @@
 <body>
 <div class="box">
     <form class="mainform" action="selection.php" method="get">
-        <h2 style="font-family: Calibri">filter players by team and display all player stats</h2>
+        <h2 style="font-family: Calibri">Filter players by team and display all player stats</h2>
         <select name="teamSelected">
             <option value="Oilers">Oilers</option>
             <option value="Canucks">Canucks</option>
@@ -55,7 +55,7 @@
 
 <div class="box">
     <form class="mainform" action="join.php" method="get">
-        <h2 style="font-family: Calibri" class="titles">show info of player</h2>
+        <h2 style="font-family: Calibri" class="titles">Show information of player</h2>
         <input type="text" class="user-input-placeholders" name="playerFirstName" placeholder="First Name">
         <br>
         <input type="text" class="user-input-placeholders" name="playerLastName" placeholder="Last Name">
@@ -66,7 +66,7 @@
 
 <div class="box">
     <form class="mainform" action="maxPlayerSalary.php" method="get">
-        <h2 style="font-family: Calibri">Find player with highest salary</h2>
+        <h2 style="font-family: Calibri">Find player with highest salary for team</h2>
         <select name="teamSalarySelected">
             <option value="All Teams">All Teams</option>
             <option value="Oilers">Oilers</option>
@@ -88,7 +88,7 @@
 
 <div class="box">
     <form class="mainform" action="averageGoals.php" method="get">
-        <h2 style="font-family: Calibri">Calculate average number of goals per player</h2>
+        <h2 style="font-family: Calibri">Calculate average number of goals per player for team</h2>
         <select name="teamGoalSelected">
             <option value="All Teams">All Teams</option>
             <option value="Oilers">Oilers</option>
@@ -103,11 +103,11 @@
 
 <div class="box">
     <form class="mainform" action="groupaggregatemin.php" method="get">
-        <h2 style="font-family: Calibri">Min team average salary</h2>
+        <h2 style="font-family: Calibri">Minimum average team salary</h2>
         <button type="submit">Min</button>
     </form>
     <form class="mainform" action="groupaggregatemax.php" method="get">
-        <h2 style="font-family: Calibri">Max team average salary</h2>
+        <h2 style="font-family: Calibri">Maximum average team salary</h2>
         <button type="submit">Max</button>
     </form>
 </div>
