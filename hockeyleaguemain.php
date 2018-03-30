@@ -104,11 +104,11 @@
 <div class="box">
     <form class="mainform" action="groupaggregatemin.php" method="get">
         <h2 style="font-family: Calibri">Minimum average team salary</h2>
-        <button type="submit">Min</button>
+        <button type="submit">Search</button>
     </form>
     <form class="mainform" action="groupaggregatemax.php" method="get">
         <h2 style="font-family: Calibri">Maximum average team salary</h2>
-        <button type="submit">Max</button>
+        <button type="submit">Search</button>
     </form>
 </div>
 

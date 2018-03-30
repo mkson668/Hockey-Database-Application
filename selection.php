@@ -16,8 +16,10 @@ if ($db_conn) {
 
 
 $team = $_GET['teamSelected'];
-echo $team;
+echo 'Team statistics for ' . $team;
 $query = 'SELECT * FROM Players WHERE teamName = :team';
+
+
 
 $stid = OCIParse($db_conn, $query);
 OCIBindByName($stid, ':team', $team);
